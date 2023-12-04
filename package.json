@@ -1,0 +1,22 @@
+{
+  "name": "d3_animated_population_pyramid",
+  "version": "1.0.0",
+  "description": "A proof of concept using D3 to create an interactive animated population pyramid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/The-Strategy-Unit/d3_animated_population_pyramid"
+  },
+  "keywords": ["d3", "charts", "data-viz"],
+  "author": "Paul Seamer",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "3.1.0"
+  }
+}
