@@ -1,0 +1,365 @@
+<!--
+Copyright Destatis:
+© Statistisches Bundesamt, Wiesbaden 2009 (Federal Statistical Office of
+Germany) https://www.destatis.de
+
+Das Statistische Bundesamt erlaubt die weitere Nutzung dieser Anwendung. Sie
+darf den eigenen Bedürfnissen entsprechend angepasst und verbreitet werden,
+solange das Statistische Bundesamt als Quelle referenziert wird und die
+vorhandenen Copyright-Angaben im Quellcode erhalten bleiben bzw. ergänzt
+werden.
+
+Anpassungen (auch neue Gestaltungen) sind mit einem Veränderungshinweis im
+Quellenvermerk zu versehen.
+--><!doctype html>
+<html class="no-js" lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Die Bevölkerungspyramide (Alterspyramide) des Statistischen Bundesamtes zeigt die Entwicklung der Altersstruktur Deutschlands von 1950 bis 2060"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#fafafa" />
+    <title>
+      Bevölkerungspyramide: Altersstruktur Deutschlands von 1950 - 2060
+    </title>
+    <!-- Helps prevent duplicate content issues -->
+    <link rel="canonical" href="http://localhost:8080/index.html" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--
+            This borrows heavily from Mike Bostock's take on the population pyramid
+            Many thanks and see http://bl.ocks.org/mbostock/4062085 for details
+            
+        -->
+    <!-- Matomo -->
+    <script>
+      var _paq = _paq || [];
+      _paq.push(["disableCookies"]),
+        _paq.push(["setDocumentTitle", document.domain + "/" + document.title]),
+        _paq.push(["enableHeartBeatTimer", 30]),
+        _paq.push(["addDownloadExtensions", "mp4|mp4b"]),
+        _paq.push(["setDomains", "*.destatis.de"]),
+        _paq.push(["trackPageView"]),
+        _paq.push(["enableLinkTracking"]),
+        (function () {
+          var e = "//piwik.itzbund.de/";
+          _paq.push(["setTrackerUrl", e + "js/"]), _paq.push(["setSiteId", 58]);
+          var a = document,
+            t = a.createElement("script"),
+            s = a.getElementsByTagName("script")[0];
+          (t.type = "text/javascript"),
+            (t.async = !0),
+            (t.defer = !0),
+            (t.src = e + "js/"),
+            s.parentNode.insertBefore(t, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="pageHeader">
+        <div class="sixty left">
+          <h1 id="headline">
+            15. koordinierte Bevölkerungsvoraus­berechnung für Deutschland
+          </h1>
+          <h2>
+            <span id="assumptionsSubhead"></span> <span id="subheadline"></span>
+          </h2>
+        </div>
+        <ul class="navServiceLanguage">
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 33 33"
+              xml:space="preserve"
+            >
+              <style type="text/css">
+                .st0 {
+                  fill: none;
+                  stroke: #514051;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 10;
+                }
+              </style>
+              <g>
+                <circle class="st0" cx="16.5" cy="16.5" r="16" />
+                <path
+                  class="st0"
+                  d="M16.5,32.5c-4.4,0-8-7.2-8-16s3.6-16,8-16"
+                />
+                <path
+                  class="st0"
+                  d="M16.5,32.5c4.4,0,8-7.2,8-16s-3.6-16-8-16"
+                />
+                <g>
+                  <path
+                    class="st0"
+                    d="M3.9,6.7c2.9,1.9,7.5,3.1,12.6,3.1c5.1,0,9.7-1.2,12.6-3.1"
+                  />
+                  <path
+                    class="st0"
+                    d="M3.9,26.3c2.9-1.9,7.5-3.1,12.6-3.1c5.1,0,9.7,1.2,12.6,3.1"
+                  />
+                </g>
+                <line class="st0" x1="16.5" y1="0.5" x2="16.5" y2="32.4" />
+                <line class="st0" x1="32.5" y1="16.5" x2="0.5" y2="16.5" />
+              </g>
+            </svg>
+            <a id="lang-button" href="#" title="Switch to english website"
+              >English</a
+            >
+          </li>
+        </ul>
+        <div class="fourty right">
+          <a
+            title="Öffnet die Startseite des Statistischen Bundesamtes"
+            href="https://www.destatis.de/"
+            ><!-- LOGO -->
+            <figure>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="logo-large"
+                width="193"
+                height="50"
+                viewBox="0 0 193 50"
+              >
+                <path
+                  fill="#1d1d1b"
+                  d="M11.8 47.2c-.3.5-.7 1-1.3 1.3-.4.3-.8.5-1.3.6s-.9.2-1.5.2c-.7 0-1.4-.1-2.1-.3-.6-.2-1.3-.5-1.9-.8l.8-1.2c.5.4 1 .6 1.6.8s1.1.2 1.7.2c.5 0 .8 0 1.1-.1s.6-.2.8-.4c.6-.4.9-1 .9-1.8 0-1.1-.7-1.8-2.2-2.3L7.2 43c-.6-.2-1-.3-1.3-.5-.3-.1-.6-.3-.9-.5-.5-.5-.8-1.2-.8-2 0-.5.1-1 .3-1.4.2-.4.5-.8.8-1.1.3-.3.8-.6 1.3-.7s1-.3 1.6-.3c1.3 0 2.5.4 3.7 1.2l-.6 1.1c-.3-.2-.6-.4-.8-.5-.3-.1-.5-.2-.7-.3-.2-.1-.5-.1-.7-.2-.2 0-.5-.1-.7-.1-.8 0-1.4.2-1.8.5-.4.4-.6.9-.6 1.5 0 .5.2.9.5 1.2.3.3.8.6 1.6.8l1.4.4c.5.2 1 .3 1.3.5.3.2.6.4.9.7s.4.6.6 1c.1.4.2.8.2 1.2-.2.6-.4 1.1-.7 1.7zm6.2-6.1h-1.9v5.7c0 .5.1.8.2 1 .2.2.5.3.9.3h.5c.1 0 .3-.1.4-.1l.2.9c-.5.2-1 .4-1.6.4-.2 0-.5 0-.6-.1-.2 0-.4-.1-.5-.2-.3-.2-.5-.4-.7-.7-.1-.3-.2-.7-.2-1.1v-6.1h-1.2V40h1.2v-1.4c0-.2 0-.5.1-.8l1.5-.3c0 .3-.1.6-.1.8 0 .3 0 .5-.1.8v.9h2.2l-.3 1.1zm8.2 8.2c-.3-.1-.6-.3-.8-.5-.2-.2-.4-.5-.4-.8-.4.4-.8.7-1.2.9-.4.2-.8.3-1.4.3-.5 0-1-.1-1.4-.2s-.7-.4-.9-.6c-.2-.2-.4-.5-.5-.8-.1-.3-.1-.6-.1-.9 0-1 .4-1.8 1.2-2.4s2-.8 3.5-.8h.6V42c0-.2-.1-.4-.2-.5-.1-.2-.3-.3-.5-.4s-.4-.1-.7-.1c-.3 0-.5 0-.8.1-.3.1-.5.1-.8.2s-.5.2-.7.3c-.2.1-.4.3-.5.4l-.7-1c1.2-.8 2.4-1.2 3.7-1.2 1.3 0 2.1.5 2.5 1.4.1.2.2.5.2.9v1.1l-.1 2.9v.9c0 .2 0 .4.1.6.1.2.1.3.2.4.1.1.2.2.4.3l-.7 1zm-1.7-4.9h-.4c-.6 0-1 0-1.4.1-.4.1-.7.2-.9.4-.2.2-.4.4-.5.7-.1.3-.2.6-.2.9 0 1.1.5 1.6 1.5 1.6.5 0 .9-.1 1.3-.4.4-.3.7-.6.9-1l.1-2.3c-.2.1-.3.1-.4 0zm8.2-3.3h-1.9v5.7c0 .5.1.8.2 1 .2.2.5.3.9.3h.5c.1 0 .3-.1.4-.1l.2.9c-.5.2-1 .4-1.6.4-.2 0-.5 0-.6-.1-.2 0-.4-.1-.5-.2-.3-.2-.5-.4-.7-.7-.1-.3-.2-.7-.2-1.1v-6.1h-1.2V40h1.2v-1.4c0-.2 0-.5.1-.8l1.5-.3c0 .3-.1.6-.1.8 0 .3 0 .5-.1.8v.9H33l-.3 1.1zm3.8-3c-.2.2-.5.3-.8.3s-.6-.1-.8-.3c-.2-.2-.3-.5-.3-.8 0-.3.1-.6.3-.8.2-.2.5-.3.8-.3s.6.1.8.3c.2.2.3.5.3.8 0 .3-.1.6-.3.8zM35 49v-8.9l1.4-.2V49H35zm10.1-1.5c-.2.4-.4.7-.7.9-.3.3-.7.5-1.1.6-.4.1-.9.2-1.4.2-.6 0-1.1-.1-1.7-.2-.6-.2-1.1-.4-1.5-.7l.5-1c.9.6 1.9.8 2.8.8.5 0 1-.1 1.3-.4.3-.3.5-.6.5-1.1 0-.4-.1-.7-.3-1-.2-.2-.6-.4-1.1-.5l-1.1-.2c-.7-.2-1.3-.4-1.7-.9-.4-.4-.6-1-.6-1.6 0-.4.1-.8.2-1.1.2-.3.4-.6.7-.9.3-.2.6-.4 1-.6.4-.1.8-.2 1.3-.2s.9.1 1.4.2c.5.1.9.3 1.3.5l-.5 1c-.4-.2-.8-.3-1.1-.5s-.7-.2-1.1-.2c-.5 0-.9.1-1.2.4-.3.3-.5.6-.5 1.1 0 .3.1.6.3.8.2.2.5.4 1 .5l1.2.3c1.6.3 2.4 1.2 2.4 2.5 0 .6-.1 1-.3 1.3zm5.9-6.4h-1.9v5.7c0 .5.1.8.2 1 .2.2.5.3.9.3h.5c.1 0 .3-.1.4-.1l.2.9c-.5.2-1 .4-1.6.4-.2 0-.5 0-.6-.1-.2 0-.4-.1-.5-.2-.3-.2-.5-.4-.7-.7-.1-.3-.2-.7-.2-1.1v-6.1h-1.2V40h1.2v-1.4c0-.2 0-.5.1-.8l1.5-.3c0 .3-.1.6-.1.8 0 .3 0 .5-.1.8v.9h2.2l-.3 1.1zm3.9-3c-.2.2-.5.3-.8.3s-.6-.1-.8-.3c-.2-.2-.3-.5-.3-.8 0-.3.1-.6.3-.8.2-.2.5-.3.8-.3s.6.1.8.3c.2.2.3.5.3.8 0 .3-.1.6-.3.8zM53.3 49v-8.9l1.4-.2V49h-1.4zm10.2-1.5c-.2.4-.4.7-.7.9-.3.3-.7.5-1.1.6-.4.1-.9.2-1.4.2-.6 0-1.1-.1-1.7-.2-.6-.2-1.1-.4-1.5-.7l.5-1c.9.6 1.9.8 2.8.8.5 0 1-.1 1.3-.4.3-.3.5-.6.5-1.1 0-.4-.1-.7-.3-1-.2-.2-.6-.4-1.1-.5l-1.1-.2c-.7-.2-1.3-.4-1.7-.9-.4-.4-.6-1-.6-1.6 0-.4.1-.8.2-1.1.2-.3.4-.6.7-.9.3-.2.6-.4 1-.6.4-.1.8-.2 1.3-.2s.9.1 1.4.2c.5.1.9.3 1.3.5l-.5 1c-.4-.2-.8-.3-1.1-.5s-.7-.2-1.1-.2c-.5 0-.9.1-1.2.4-.3.3-.5.6-.5 1.1 0 .3.1.6.3.8.2.2.5.4 1 .5l1.2.3c1.6.3 2.4 1.2 2.4 2.5 0 .6-.1 1-.3 1.3zm7.3 1.4c-.4.2-.9.3-1.5.3-1.3 0-2.2-.4-2.8-1.3-.3-.4-.5-.9-.7-1.4-.1-.5-.2-1.1-.2-1.8 0-1 .1-1.8.4-2.3.3-.6.6-1.1 1-1.4.7-.7 1.5-1 2.4-1 .6 0 1 .1 1.4.3s.7.4 1 .7l-.8 1c-.3-.3-.6-.4-.8-.6-.2-.1-.5-.2-.9-.2s-.7.1-1 .3-.5.4-.7.7c-.3.6-.5 1.6-.5 2.9 0 1 .2 1.8.6 2.3.4.5.9.8 1.6.8.7 0 1.4-.3 1.9-1l.8.8c-.4.4-.8.7-1.2.9zm8.5.1v-6.2c0-.3 0-.6-.1-.8 0-.2-.1-.4-.3-.5-.1-.1-.3-.2-.4-.3-.2-.1-.4-.1-.6-.1-.4 0-.9.1-1.3.4s-.9.6-1.3 1.1V49h-1.4V38c0-.6-.1-1.2-.2-1.8l1.4-.3c.2.7.2 1.4.2 2.1v2.1c0 .3 0 .7-.1 1.2.4-.4.9-.7 1.4-1 .5-.3 1-.4 1.6-.4.5 0 1 .1 1.4.4s.7.6.8 1c.1.2.1.4.1.5V49h-1.2zm5.7-4.2v.2c0 .4 0 .8.1 1.1.1.3.2.6.3.8.3.4.6.7 1 .8.4.2.8.3 1.3.3.8 0 1.6-.3 2.2-.8l.5.9c-.4.4-.8.6-1.4.8-.5.2-1.1.3-1.6.3-1.2 0-2.2-.4-2.9-1.3-.7-.8-1-2-1-3.5 0-.8.1-1.4.3-1.9.2-.5.4-1 .8-1.5.7-.8 1.6-1.2 2.7-1.2 1 0 1.8.3 2.4 1 .2.2.4.4.5.6.1.2.2.5.3.8.1.3.1.6.2 1 0 .4.1.8.1 1.4v.2H85zm3.9-2.3c-.1-.3-.2-.6-.3-.8-.2-.2-.4-.4-.7-.6s-.6-.2-.9-.2c-1.3 0-2 .9-2.1 2.8H89c0-.5 0-.9-.1-1.2zm9.7 5c-.2.4-.4.7-.7.9-.3.3-.7.5-1.1.6-.4.1-.9.2-1.4.2-.6 0-1.1-.1-1.7-.2-.6-.2-1.1-.4-1.5-.7l.5-1c.9.6 1.9.8 2.8.8.5 0 1-.1 1.3-.4.3-.3.5-.6.5-1.1 0-.4-.1-.7-.3-1-.2-.2-.6-.4-1.1-.5l-1.1-.2c-.7-.2-1.3-.4-1.7-.9-.4-.4-.6-1-.6-1.6 0-.4.1-.8.2-1.1.2-.3.4-.6.7-.9.3-.2.6-.4 1-.6.4-.1.8-.2 1.3-.2s.9.1 1.4.2c.5.1.9.3 1.3.5l-.5 1c-.4-.2-.8-.3-1.1-.5-.4-.1-.7-.2-1.1-.2-.5 0-.9.1-1.2.4-.3.3-.5.6-.5 1.1 0 .3.1.6.3.8.2.2.5.4 1 .5l1.2.3c1.6.3 2.4 1.2 2.4 2.5 0 .6-.1 1-.3 1.3zm14.2 0c-.3.5-.8.9-1.4 1.2-.2.1-.3.1-.5.2-.2 0-.3.1-.6.1-.2 0-.5.1-.8.1h-4.3V36.7h4.3c.3 0 .5.1.7.1.2 0 .3.1.5.1.6.2 1.1.6 1.5 1.1.4.5.6 1.1.6 1.7 0 .6-.2 1.2-.6 1.7s-.9.8-1.6 1c.4.1.7.2.9.3s.5.2.7.4c.4.3.7.7.9 1.1s.2.9.2 1.4c0 .7-.1 1.3-.5 1.9zm-2-8.8c-.3-.3-.6-.6-1-.7-.2 0-.4-.1-.6-.1h-2.5v4h2.9c.2 0 .4-.1.6-.2.2-.1.3-.2.4-.3.1-.1.2-.3.3-.5.1-.3.2-.6.2-.9.1-.5 0-.9-.3-1.3zm.6 5.4c-.3-.4-.6-.7-1.1-.8-.2 0-.4-.1-.6-.1h-3v4.6h2.6c.9 0 1.5-.2 1.9-.6.4-.4.6-1 .6-1.7 0-.5-.1-1-.4-1.4zm10.8 5.3c-.3-.2-.5-.5-.7-.7-.1-.2-.2-.5-.3-.8-.7.9-1.6 1.4-2.8 1.4-.6 0-1.1-.1-1.5-.3-.4-.2-.7-.5-.9-.9-.1-.2-.1-.4-.2-.6 0-.2-.1-.5-.1-.7v-6.5l1.4-.3v6.4c0 .4 0 .7.1 1s.2.4.4.5c.1.1.3.2.5.2s.4.1.6.1c.4 0 .9-.1 1.3-.4.4-.3.7-.7 1-1.2v-6.3l1.4-.2v6.5c0 .6 0 1 .1 1.3.1.3.2.5.5.7l-.8.8zm8.5-.4v-6.6c0-.2 0-.3-.1-.4 0-.1-.1-.2-.1-.3 0-.1-.1-.2-.2-.2-.2-.3-.5-.4-1-.4-.2 0-.4 0-.6.1s-.4.2-.7.3c-.2.1-.4.2-.7.4-.2.2-.4.3-.6.5V49h-1.4v-6.9c0-.6-.1-1.3-.3-1.9l1.4-.4s0 .1.1.2.1.3.2.5.1.5.1.7c.9-.9 1.9-1.4 2.8-1.4.5 0 .9.1 1.3.4s.7.6.9.9c.1.3.2.7.2 1V49h-1.3zm10.3 0c-.1-.4-.2-.7-.2-.9-.3.4-.7.6-1 .8-.4.2-.8.2-1.3.2-1.2 0-2.1-.4-2.7-1.2-.6-.8-.9-1.9-.9-3.3 0-1.9.6-3.3 1.8-4.1.3-.2.6-.3.8-.4.3-.1.6-.1.9-.1.5 0 1 .1 1.4.3.4.2.8.5 1 .8V36l1.4.2v9.9c0 .8 0 1.4.1 1.8 0 .4.1.8.2 1.1H141zm-.3-7c-.2-.3-.5-.5-.9-.7-.3-.2-.8-.2-1.3-.2-.7 0-1.3.3-1.7.9-.2.3-.4.7-.4 1.1-.1.4-.1.9-.1 1.5 0 .5 0 1 .1 1.4 0 .4.1.7.3 1 .2.4.4.6.7.8.3.2.6.2 1.1.2.4 0 .7 0 .9-.1.2-.1.5-.2.8-.4.2-.1.4-.3.5-.6V42zm5.7 2.8v.2c0 .4 0 .8.1 1.1s.2.6.3.8c.3.4.6.7 1 .8.4.2.8.3 1.3.3.8 0 1.6-.3 2.2-.8l.5.9c-.4.4-.8.6-1.4.8-.5.2-1.1.3-1.6.3-1.2 0-2.2-.4-2.9-1.3-.7-.8-1-2-1-3.5 0-.8.1-1.4.3-1.9.2-.5.4-1 .8-1.5.7-.8 1.6-1.2 2.7-1.2 1 0 1.8.3 2.4 1 .2.2.4.4.5.6.1.2.2.5.3.8.1.3.1.6.2 1 0 .4.1.8.1 1.4v.2h-5.8zm4-2.3c-.1-.3-.2-.6-.3-.8-.2-.2-.4-.4-.7-.6s-.6-.2-.9-.2c-1.3 0-2 .9-2.1 2.8h4.1c0-.5-.1-.9-.1-1.2zm9.7 5c-.2.4-.4.7-.7.9-.3.3-.7.5-1.1.6-.4.1-.9.2-1.4.2-.6 0-1.1-.1-1.7-.2-.6-.2-1.1-.4-1.5-.7l.5-1c.9.6 1.9.8 2.8.8.5 0 1-.1 1.3-.4.3-.3.5-.6.5-1.1 0-.4-.1-.7-.3-1-.2-.2-.6-.4-1.1-.5l-1.1-.2c-.7-.2-1.3-.4-1.7-.9-.4-.4-.6-1-.6-1.6 0-.4.1-.8.2-1.1.2-.3.4-.6.7-.9s.6-.4 1-.6.8-.2 1.3-.2.9.1 1.4.2c.5.1.9.3 1.3.5l-.5 1c-.4-.2-.8-.3-1.1-.5-.4-.1-.7-.2-1.1-.2-.5 0-.9.1-1.2.4-.3.3-.5.6-.5 1.1 0 .3.1.6.3.8.2.2.5.4 1 .5l1.2.3c1.6.3 2.4 1.2 2.4 2.5-.1.6-.2 1-.3 1.3zm8.5 1.8c-.3-.1-.6-.3-.8-.5-.2-.2-.4-.5-.4-.8-.4.4-.8.7-1.2.9-.4.2-.8.3-1.4.3-.5 0-1-.1-1.4-.2-.4-.2-.7-.4-.9-.6-.2-.2-.4-.5-.5-.8-.1-.3-.1-.6-.1-.9 0-1 .4-1.8 1.2-2.4.8-.6 2-.8 3.5-.8h.6V42c0-.2-.1-.4-.2-.5-.1-.2-.3-.3-.5-.4-.2-.1-.4-.1-.7-.1-.3 0-.5 0-.8.1-.3.1-.5.1-.8.2-.3.1-.5.2-.7.3-.2.1-.4.3-.5.4l-.7-1c1.2-.8 2.4-1.2 3.7-1.2 1.3 0 2.1.5 2.5 1.4.1.2.2.5.2.9v1.1l-.1 2.9v.9c0 .2 0 .4.1.6s.1.3.2.4.2.2.4.3l-.7 1zm-1.7-4.9h-.4c-.6 0-1 0-1.4.1-.4.1-.7.2-.9.4-.2.2-.4.4-.5.7-.1.3-.2.6-.2.9 0 1.1.5 1.6 1.5 1.6.5 0 .9-.1 1.3-.4.4-.3.7-.6.9-1l.1-2.3c-.2.1-.3.1-.4 0zm14.6 4.6v-6.6c0-.9-.4-1.3-1.1-1.3-.4 0-.8.1-1.1.4-.4.2-.8.6-1.2 1V49h-1.4v-6.3c0-.3 0-.5-.1-.7 0-.2-.1-.3-.2-.5-.2-.2-.5-.4-.9-.4-.3 0-.7.1-1 .3-.4.2-.8.5-1.2.9V49H172v-6.9c0-.6-.1-1.3-.3-1.9l1.4-.3s0 .1.1.2.1.3.2.5.1.4.1.6c.1-.2.3-.3.5-.5s.4-.3.7-.4c.2-.1.5-.2.7-.3.2-.1.5-.1.7-.1.4 0 .9.1 1.2.4.4.3.7.6.8 1.1.4-.5.9-.8 1.4-1.1s1-.4 1.4-.4c.7 0 1.2.2 1.6.7.4.4.6 1 .6 1.7V49h-1.6zm7.9-7.9h-1.9v5.7c0 .5.1.8.2 1 .2.2.5.3.9.3h.5c.1 0 .3-.1.4-.1l.2.9c-.5.2-1 .4-1.6.4-.2 0-.5 0-.6-.1-.2 0-.4-.1-.5-.2-.3-.2-.5-.4-.7-.7-.1-.3-.2-.7-.2-1.1v-6.1H185V40h1.2v-1.4c0-.2 0-.5.1-.8l1.5-.3c0 .3-.1.6-.1.8 0 .3 0 .5-.1.8v.9h2.2l-.4 1.1z"
+                />
+                <path
+                  fill="#b2b2b2"
+                  d="M153.1 4.4h-6.3V26h-6.6V4.4h-6.5V.6h19.4v3.8zm-132 16.4c-.9 1.2-2.3 1.8-4.2 1.8H11l-.1-18.8h5.3c1.9 0 3.4.7 4.5 2.2 1.1 1.5 1.7 3.6 1.7 6.4l.1 1.7c0 3.3-.5 5.5-1.4 6.7zm7.9-8.6c0-3.8-.9-6.7-2.8-8.9S21.2 0 16.8 0H4.3l.1 26.4h13.5c3.7 0 6.5-1 8.3-3 1.9-2 2.8-5 2.8-9.2v-2zm59.7 6.2c0 2.7-1 4.7-3.1 6-2.1 1.3-4.9 1.9-8.6 1.9-2.1 0-3.9-.1-5.3-.3-1.4-.2-2.6-.5-3.6-.8v-4.3c.7.4 1.9.7 3.5 1.1 1.6.3 3.1.5 4.6.5 2.1 0 3.6-.2 4.4-.7.8-.5 1.2-1.3 1.2-2.5 0-.7-.3-1.4-.9-2-.6-.6-3.4-1.3-6.2-2.3-2.2-.8-3.8-1.8-5-2.9-1.1-1.2-1.7-2.8-1.7-4.9 0-1.9 1-3.6 2.9-4.9 1.9-1.3 4.6-2 7.9-2 1.6 0 4.3.1 5.6.3 1.3.2 2.2.4 2.8.6v3.9l-3.3-.6c-1.1-.2-3.5-.3-4.7-.3-1.7 0-3 .2-3.8.7-.8.5-1.2 1-1.2 1.7 0 .9.3 1.6.9 2 .6.5 2.3 1.1 5.1 2 2.6.8 5.7 1.9 6.8 3.1 1.1 1.5 1.7 3 1.7 4.7zm21-14h-6.3V26h-6.6V4.4h-6.5V.6h19.4v3.8zm8 11.8l3.4-9.3 3.6 9.3h-7zM124.8.6h-6.1L108.9 26h5.4l2.2-6.1h9.6l2.1 6.1h6.7L124.8.6zM164.2 26h-6.6V.6h6.6V26zm25.6-7.6c0 2.7-1 4.7-3.1 6-2.1 1.3-4.9 1.9-8.6 1.9-2.1 0-3.9-.1-5.3-.3-1.4-.2-2.6-.5-3.6-.8v-4.3c.7.4 1.9.7 3.5 1.1 1.6.3 3.1.5 4.6.5 2.1 0 3.6-.2 4.4-.7.8-.5 1.2-1.3 1.2-2.5 0-.7-.3-1.4-.9-2-.6-.6-3.6-1.3-6.4-2.3-2.2-.8-3.8-1.8-5-2.9-1.2-1.2-1.8-2.8-1.8-4.8 0-1.9 1-3.6 2.9-4.9 1.9-1.3 4.6-2 7.9-2 1.6 0 4.5.1 5.8.3 1.3.2 2.2.4 2.8.6v3.9l-3.3-.6c-1.1-.2-3.7-.3-4.9-.3-1.7 0-3 .2-3.8.7-.8.5-1.2 1-1.2 1.7 0 .9.3 1.6.9 2 .6.5 2.3 1.1 5.1 2 2.6.8 5.9 1.9 7 3.1 1.2 1.4 1.8 2.9 1.8 4.6z"
+                />
+                <path fill="#1d1d1b" d="M33.8 19.7V2.5h6.1v17.1z" />
+                <path fill="#cf3339" d="M44.9 19.7V6.6H51v13z" />
+                <path fill="#ffc629" d="M56.2.2h6.1v19.4h-6.1z" />
+                <path fill="#b2b2b2" d="M33.5 21.8h29.2v4.4H33.5z" />
+              </svg></figure
+          ></a>
+        </div>
+      </div>
+      <div id="easel">
+        <p class="spinner hourglass">… Daten werden geladen …</p>
+        <p class="fineprint hourglass">
+          Sollte dieser Hinweis nicht nach wenigen Sekunden verschwinden,<br />dann
+          prüfen Sie bitte, ob JavaScript aktiviert ist und<br />Sie einen
+          modernen Browser verwenden
+        </p>
+        <!--  click event for that button is added to the attached SVG where the mini outline goes 
+            see function outline()
+            -->
+        <div id="legend" class="xl">
+          <!-- <button id="makeOutline" class="noPrint">outline</button> -->
+        </div>
+      </div>
+      <div id="sliderHolder" class="xl noPrint"></div>
+      <div id="dashBoard">
+        <form class="futureMeta">
+          <div id="variantBox" class="xl">
+            <fieldset>
+              <h3 class="variantBoxTitle"></h3>
+              <!-- <legend>Wählen Sie jeweils eine Annahme</legend> -->
+              <div class="fourty left">
+                <label class="variantBoxTitleG"></label>
+                <label class="variantBoxTitleL"></label>
+                <label class="variantBoxTitleW"></label>
+              </div>
+              <div class="sixty right">
+                <span class="variantBoxRadioTitle1"></span>
+                <span class="variantBoxRadioTitle2"></span>
+                <span class="variantBoxRadioTitle3"></span><br /><span
+                  ><input type="radio" id="g1" name="geburt" value="g1" /><label
+                    for="g1"
+                    >G1</label
+                  ></span
+                >
+                <span
+                  ><input type="radio" id="g2" name="geburt" value="g2" /><label
+                    for="g2"
+                    >G2</label
+                  ></span
+                >
+                <span
+                  ><input type="radio" id="g3" name="geburt" value="g3" /><label
+                    for="g3"
+                    >G3</label
+                  ></span
+                ><br /><span
+                  ><input type="radio" id="l1" name="leben" value="l1" /><label
+                    for="l1"
+                    >L1</label
+                  ></span
+                >
+                <span
+                  ><input type="radio" id="l2" name="leben" value="l2" /><label
+                    for="l2"
+                    >L2</label
+                  ></span
+                >
+                <span
+                  ><input type="radio" id="l3" name="leben" value="l3" /><label
+                    for="l3"
+                    >L3</label
+                  ></span
+                ><br /><span
+                  ><input
+                    type="radio"
+                    id="w1"
+                    name="wanderung"
+                    value="w1"
+                  /><label for="w1">W1</label></span
+                >
+                <span
+                  ><input
+                    type="radio"
+                    id="w2"
+                    name="wanderung"
+                    value="w2"
+                  /><label for="w2">W2</label></span
+                >
+                <span
+                  ><input
+                    type="radio"
+                    id="w3"
+                    name="wanderung"
+                    value="w3"
+                  /><label for="w3">W3</label></span
+                >
+              </div>
+            </fieldset>
+          </div>
+          <div id="assumptions">
+            <h4 id="asmpH4">
+              <span id="assumptionsHead"></span>
+              <span id="assumptionsHeadx" class="nick"></span>
+            </h4>
+            <p>
+              <span class="bold assumptionsTitleG"></span><br /><span
+                class="assumptionG"
+              ></span>
+            </p>
+            <p>
+              <span class="bold assumptionsTitleL"></span><br /><span
+                class="assumptionL"
+              ></span>
+            </p>
+            <p>
+              <span class="bold assumptionsTitleW"></span><br /><span
+                class="assumptionW"
+              ></span>
+            </p>
+          </div>
+        </form>
+        <!-- end of what will be displayed in years >= beginProjection -->
+        <div id="data">
+          <table>
+            <tr>
+              <td id="tAge"></td>
+              <td id="tMill"></td>
+              <td id="tRatio"></td>
+            </tr>
+            <tr class="above">
+              <td class="ageLimitTxt" id="txUp"></td>
+              <td id="oldAbs"></td>
+              <td id="oldPerc"></td>
+            </tr>
+            <tr>
+              <td class="ageLimitTxt" id="txMed"></td>
+              <td id="mediumAbs"></td>
+              <td id="mediumPerc"></td>
+            </tr>
+            <tr>
+              <td class="ageLimitTxt" id="txLow"></td>
+              <td id="youngAbs"></td>
+              <td id="youngPerc"></td>
+            </tr>
+            <tr class="above">
+              <td id="tTotal" style="text-align: left"></td>
+              <td id="totals"></td>
+              <td>100%</td>
+            </tr>
+          </table>
+          <!-- <p class="xl">&nbsp;</p> -->
+          <p class="xl">
+            <a href="#" id="jungQ"></a> | <a href="#" id="altQ"></a>
+          </p>
+        </div>
+        <div id="ageLimitControl" class="noPrint xl">
+          <p>
+            <label class="switch" for="ageLimiter"
+              ><input type="checkbox" id="ageLimiter" name="ageLimiter" />
+              <span class="slider round"></span
+            ></label>
+            <span id="ageGroupsTxt"></span
+            ><!-- <button id="ageLimiter"> </button> -->
+          </p>
+          <p>
+            <label class="switch" for="makeOutline"
+              ><input type="checkbox" id="makeOutline" />
+              <span class="slider round"></span
+            ></label>
+            <span id="makeOutlineTxt"></span
+            ><!-- <button id="ageLimiter"> </button> -->
+          </p>
+        </div>
+        <div id="footer" class="noPrint">
+          <p class="embed xl">
+            <a
+              href="data/15_bevoelkerungsvorausberechnung_daten.csv"
+              title="Lädt die Daten zur Bevölkerungsvorausberechnung herunter"
+              download="15_bevoelkerungsvorausberechnung_daten.csv"
+              ><span id="downloadInfo"></span
+            ></a>
+          </p>
+          <p class="flushRight">
+            <a
+              target="_blank"
+              title="Öffnet die Themenseite der Bevölkerungsvoraus­berechnung in einem neuen Fenster"
+              href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsvorausberechnung/_inhalt.html"
+              rel="noopener noreferrer"
+              ><span id="furtherInfo"></span></a
+            ><!--  -->
+          </p>
+        </div>
+      </div>
+      <!-- end dashboard -->
+      <div id="copyright">
+        <!-- <p class="embed xl centerGraph">
+            <a href="#" title="Grafik in Webseite einbetten">
+            <span id="embedLink"></span>
+            &nbsp; &lt; / &gt;
+            </a>
+        </p> -->
+        <p class="logo-small js-copyright">&nbsp;</p>
+      </div>
+    </div>
+    <!-- end wrapper -->
+    <script defer src="js/d3.min.js"></script>
+    <script defer src="js/d3.slider.js"></script>
+    <script defer src="js/main.js"></script>
+    <!-- Matomo --><noscript
+      ><p>
+        <img
+          src="//piwik.itzbund.de/pwk/js/?idsite=58&rec=1"
+          style="border: 0"
+          alt=""
+        /></p
+    ></noscript>
+    <script>
+      "serviceWorker" in navigator &&
+        navigator.serviceWorker.register("/sw.js");
+    </script>
+  </body>
+  <!-- 
+D3 slider thanks to 
+http://thematicmapping.org/playground/d3/d3.slider/
+--></html>
