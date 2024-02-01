@@ -308,9 +308,9 @@ function reformat(a) {
 
 // fn read Hash
 const readHash = function () {
-  sel = document.getElementById('areaMenuTop')
-  csvFilePath = 'data/' + 'd3_test_' + sel.value.replace(/ /g, '_') + '.csv'
-  csvFileNm = 'd3_test_' + sel.value.replace(/ /g, '_') + '.csv'
+  let sel = document.getElementById('areaMenuTop')
+  let csvFilePath = 'data/' + 'test_population_' + sel.value + '.csv'
+  let csvFileNm = 'test_population_' + sel.value + '.csv'
   let a = location.hash.split('#')[1]
   if (a) {
     const c = a.substring(0, 48).replace(/[^0-9a-y,&=]/g, '')
@@ -458,7 +458,7 @@ const dsv = d3.dsv(',', 'text/plain')
 // fn parse Data - this does all the heavy lifting
 function parseData() {
   sel = document.getElementById('areaMenuTop')
-  csvFileNm = 'data/' + 'd3_test_' + sel.value.replace(/ /g, '_') + '.csv'
+  csvFileNm = 'data/' + 'test_population_' + sel.value + '.csv'
   data = []
   dsv(csvFileNm, function (a) {
     datacsv = d3
