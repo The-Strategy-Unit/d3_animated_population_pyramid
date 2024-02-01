@@ -145,6 +145,12 @@ locale = d3.locale({
     ),
   shortMonths: 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ')
 })
+/* set file path */
+const blobDir =
+  'https://strategyunit.blob.core.windows.net/population-aging-app/'
+// const blobDir = './data/'
+const filePrefix = 'test_population_'
+const fileExt = '.csv'
 
 // attach a listener - fires when the initial HTML document has been completely loaded and parsed
 document.addEventListener('DOMContentLoaded', function () {
@@ -309,8 +315,8 @@ function reformat(a) {
 // fn read Hash
 const readHash = function () {
   let sel = document.getElementById('areaMenuTop')
-  let csvFilePath = 'data/' + 'test_population_' + sel.value + '.csv'
-  let csvFileNm = 'test_population_' + sel.value + '.csv'
+  let csvFilePath = blobDir + filePrefix + sel.value + fileExt
+  let csvFileNm = filePrefix + sel.value + fileExt
   let a = location.hash.split('#')[1]
   if (a) {
     const c = a.substring(0, 48).replace(/[^0-9a-y,&=]/g, '')
@@ -458,7 +464,7 @@ const dsv = d3.dsv(',', 'text/plain')
 // fn parse Data - this does all the heavy lifting
 function parseData() {
   sel = document.getElementById('areaMenuTop')
-  csvFileNm = 'data/' + 'test_population_' + sel.value + '.csv'
+  csvFileNm = blobDir + filePrefix + sel.value + fileExt
   data = []
   dsv(csvFileNm, function (a) {
     datacsv = d3
